@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>UAS Ganjil Sejarah Kelas XII</title>
+<style>
+:root{--bg:#f1f3fb;--card:#fff;--tx:#1e2340;--mut:#6b7090;--pri:#4f46e5;--pri2:#06b6d4;--ok:#16a34a;--warn:#f59e0b;--no:#d3d8e8;--bad:#dc2626;--bd:#e3e6f2;--okbg:#dcfce7;--badbg:#fee2e2;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12142a;--card:#1c1f3b;--tx:#eceefb;--mut:#9aa0c8;--no:#3a3f66;--bd:#2d3158;--okbg:#14391f;--badbg:#44181a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#12142a;--card:#1c1f3b;--tx:#eceefb;--mut:#9aa0c8;--no:#3a3f66;--bd:#2d3158;--okbg:#14391f;--badbg:#44181a;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-user-select:none;user-select:none}
+.wrap{max-width:980px;margin:0 auto;padding:16px}
+.hero{background:linear-gradient(135deg,var(--pri),var(--pri2));color:#fff;border-radius:18px;padding:22px;margin-bottom:16px}
+.hero h1{margin:0 0 4px;font-size:22px}.hero p{margin:0;opacity:.92}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:18px;box-shadow:0 4px 18px rgba(79,70,229,.08)}
+label{display:block;font-size:13px;color:var(--mut);margin:12px 0 4px;font-weight:600}
+input{width:100%;padding:11px 12px;border-radius:10px;border:1.5px solid var(--bd);background:var(--bg);color:var(--tx);font-size:16px;-webkit-user-select:text;user-select:text}
+input:focus{outline:none;border-color:var(--pri)}
+.btn{border:0;border-radius:12px;padding:12px 18px;font-size:15px;font-weight:700;cursor:pointer;color:#fff;background:linear-gradient(135deg,var(--pri),var(--pri2))}
+.btn.sec{background:var(--bg);color:var(--tx);border:1.5px solid var(--bd)}
+.btn.dbt{background:var(--bg);color:var(--tx);border:1.5px solid var(--warn)}.btn.dbt.on{background:var(--warn);color:#2b1d00}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.err{color:var(--bad);font-size:14px;min-height:20px;margin-top:8px}
+.rules{font-size:13px;color:var(--mut);margin:14px 0 0;padding-left:18px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:10px 14px;margin-bottom:12px;position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+.timer{font:700 20px ui-monospace,Consolas,monospace;color:var(--pri)}.timer.low{color:var(--bad)}
+.grid{display:grid;grid-template-columns:1fr 280px;gap:14px}
+@media(max-width:760px){.grid{grid-template-columns:1fr}}
+.qn{color:var(--pri);font-weight:700;font-size:14px}.qt{font-size:18px;margin:6px 0 14px}
+.op{display:flex;gap:10px;width:100%;text-align:left;padding:11px 12px;margin-bottom:8px;border-radius:12px;border:1.5px solid var(--bd);background:var(--bg);color:var(--tx);font-size:15px;cursor:pointer}
+.op b{min-width:26px;height:26px;border-radius:50%;background:var(--no);display:grid;place-items:center;font-size:13px;flex:none}
+.op.sel{border-color:var(--pri);background:rgba(79,70,229,.12)}.op.sel b{background:var(--pri);color:#fff}
+.bar{display:flex;gap:8px;justify-content:space-between;margin-top:14px;flex-wrap:wrap}
+.nav{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}
+.nb{aspect-ratio:1;border-radius:10px;border:2px solid transparent;background:var(--no);color:var(--tx);font-weight:700;cursor:pointer}
+.nb.a{background:var(--ok);color:#fff}.nb.d{background:var(--warn);color:#2b1d00}.nb.c{border-color:var(--pri);box-shadow:0 0 0 2px var(--pri)}
+.leg{display:flex;gap:10px;flex-wrap:wrap;font-size:12px;color:var(--mut);margin-top:12px}.leg i{display:inline-block;width:12px;height:12px;border-radius:4px;vertical-align:-1px;margin-right:4px}
+.modal{position:fixed;inset:0;background:rgba(10,12,30,.65);display:grid;place-items:center;padding:20px;z-index:20}
+.modal .card{max-width:420px;width:100%}.modal h3{margin:0 0 8px}.modal .acts{display:flex;gap:8px;justify-content:flex-end;margin-top:14px}
+.score{width:130px;height:130px;border-radius:50%;background:linear-gradient(135deg,var(--pri),var(--pri2));color:#fff;display:grid;place-items:center;font:800 40px system-ui;margin:0 auto 10px}
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:6px 16px;margin:12px 0}.info span{color:var(--mut);font-size:13px;display:block}
+.stats{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}.stats div{padding:6px 14px;border-radius:999px;background:var(--bg);font-weight:700}
+.rv{margin-top:12px}.rv .o{padding:6px 10px;border-radius:8px;margin:4px 0;font-size:14px}.o.k{background:var(--okbg)}.o.w{background:var(--badbg)}
+.pb{margin-top:8px;padding:8px 10px;border-left:4px solid var(--pri);background:var(--bg);border-radius:6px;font-size:14px}
+.hide{display:none}
+</style></head><body><div class="wrap">
+
+<section id="s1">
+ <div class="hero"><h1>📜 Ujian Akhir Semester Ganjil</h1><p>Sejarah Indonesia · Kelas XII · 50 soal pilihan ganda · 90 menit</p></div>
+ <div class="card">
+  <label>Nama Siswa</label><input id="nm" autocomplete="off">
+  <label>Kelas</label><input id="kl" placeholder="contoh: XII IPS 1" autocomplete="off">
+  <label>Nomor Peserta Didik</label><input id="ns" inputmode="numeric" autocomplete="off">
+  <label>Asal Sekolah</label><input id="sk" autocomplete="off">
+  <label>Token Ujian</label><input id="tk" placeholder="Masukkan token dari pengawas" autocomplete="off">
+  <div class="err" id="er"></div>
+  <button class="btn" id="go" style="width:100%">Mulai Ujian</button>
+  <ul class="rules"><li>Dilarang berpindah tab, membuka jendela lain, atau keluar dari layar penuh.</li><li>Peringatan kecurangan hanya satu kali; pelanggaran kedua mengakhiri ujian otomatis.</li><li>Urutan soal diacak untuk setiap peserta.</li></ul>
+ </div>
+</section>
+
+<section id="s2" class="hide">
+ <div class="top"><div><b id="who"></b></div><div class="timer" id="tm">90:00</div></div>
+ <div class="grid">
+  <div class="card"><div class="qn" id="qn"></div><div class="qt" id="qt"></div><div id="opts"></div>
+   <div class="bar"><button class="btn sec" id="pv">← Sebelumnya</button><button class="btn dbt" id="db">Ragu-ragu</button><button class="btn" id="nx">Selanjutnya →</button></div></div>
+  <div class="card"><b>Navigasi Soal</b><div class="nav" id="nv" style="margin-top:10px"></div>
+   <div class="leg"><span><i style="background:var(--ok)"></i>Dijawab</span><span><i style="background:var(--warn)"></i>Ragu-ragu</span><span><i style="background:var(--no)"></i>Belum</span></div>
+   <button class="btn" id="fin" style="width:100%;margin-top:14px">Selesai Ujian</button></div>
+ </div>
+</section>
+
+<section id="s3" class="hide"></section>
+<div id="md"></div>
+</div>
+<script>
+const TOKEN="SEJ-XII-2026",DUR=90*60;
+const RAW=`Peristiwa yang menjadi pemicu utama meletusnya Pertempuran Surabaya 10 November 1945 adalah ...|Pendaratan pasukan Sekutu di Tanjung Perak|Insiden perobekan bendera di Hotel Yamato|Tewasnya Brigjen A.W.S. Mallaby|Ultimatum Belanda kepada Gubernur Suryo|Terjadinya Agresi Militer Belanda I|2|Tewasnya Mallaby (30 Okt 1945) memicu ultimatum Sekutu dan pertempuran 10 November.
+Tokoh yang membakar semangat arek-arek Surabaya melalui siaran radio pada pertempuran 10 November 1945 adalah ...|Bung Tomo|Gubernur Soerjo|Mayjen Mustopo|Residen Sudirman|Sutan Sjahrir|0|Bung Tomo berpidato lewat radio untuk membangkitkan semangat rakyat Surabaya.
+Pertempuran Ambarawa berakhir dengan kemenangan pihak Indonesia pada 15 Desember 1945. Tanggal tersebut diperingati sebagai ...|Hari Pahlawan|Hari Bela Negara|Hari Kesaktian Pancasila|Hari Pers Nasional|Hari Juang Kartika|4|Kemenangan di Ambarawa diperingati sebagai Hari Juang Kartika (TNI AD).
+Peristiwa Bandung Lautan Api pada 24 Maret 1946 dilatarbelakangi oleh ultimatum Sekutu yang menuntut ...|Penyerahan seluruh wilayah Jawa Barat kepada Belanda|Pengosongan wilayah Bandung Utara oleh pihak Indonesia|Pembebasan seluruh tawanan perang di Pulau Jawa|Pengakuan kedaulatan Belanda atas Kota Bandung|Penghentian siaran radio Republik Indonesia|1|Sekutu menuntut Bandung Utara dikosongkan; rakyat membakar kota sebelum mengungsi.
+Salah satu isi Perundingan Linggarjati (1946) adalah ...|Belanda mengakui kedaulatan RI atas seluruh bekas Hindia Belanda|Pembentukan RIS ditolak oleh kedua belah pihak|Wilayah RI hanya meliputi Jawa Tengah dan Yogyakarta|Belanda mengakui secara de facto wilayah RI meliputi Jawa, Madura, dan Sumatra|Belanda menarik seluruh pasukannya dari Indonesia pada tahun 1946|3|Linggarjati: pengakuan de facto atas Jawa, Madura, dan Sumatra.
+Agresi Militer Belanda I pada 21 Juli 1947 oleh pihak Belanda disebut dengan istilah ...|Operatie Kraai|Operasi Seroja|Operatie Product (aksi polisionil)|Operasi Trikora|Operasi Lilin|2|Belanda menamai Agresi I sebagai Operatie Product, dalih aksi polisionil.
+Salah satu isi Perjanjian Renville yang sangat merugikan Indonesia adalah ...|Pasukan RI harus ditarik dari daerah kantong di wilayah yang dikuasai Belanda (Garis Van Mook)|Belanda menyerahkan Irian Barat kepada Indonesia|Indonesia wajib menjadi anggota Commonwealth|Belanda mengakui kedaulatan penuh RI atas Pulau Jawa|TNI harus dibubarkan|0|Wilayah RI menyempit; TNI hijrah dari kantong-kantong gerilya (Long March Siliwangi).
+Setelah Yogyakarta diduduki Belanda pada Agresi Militer II, untuk menyelamatkan kelangsungan pemerintahan RI dibentuk Pemerintah Darurat Republik Indonesia (PDRI) yang dipimpin oleh ...|Mohammad Hatta|Sutan Sjahrir|Mr. Assaat|Mr. Syafruddin Prawiranegara|Dr. Soekiman|3|PDRI dibentuk di Sumatra Barat dipimpin Mr. Syafruddin Prawiranegara.
+Tujuan utama Serangan Umum 1 Maret 1949 di Yogyakarta adalah ...|Merebut kembali Kota Jakarta|Menunjukkan kepada dunia bahwa TNI dan RI masih ada|Memaksa Belanda menandatangani hasil KMB|Membebaskan Soekarno dan Hatta dari pengasingan|Menghancurkan basis militer Belanda di Surabaya|1|Serangan ini membantah propaganda Belanda bahwa RI dan TNI telah hancur.
+Salah satu isi Perjanjian Roem-Roijen (7 Mei 1949) adalah ...|Belanda menyerahkan kedaulatan atas seluruh Indonesia pada 1949|Irian Barat diserahkan kepada Republik Indonesia|Pembentukan Uni Indonesia-Belanda dibatalkan|TNI dilebur ke dalam KNIL|Pemerintah RI dikembalikan ke Yogyakarta|4|Roem-Roijen: pemerintah RI dikembalikan ke Yogyakarta dan permusuhan dihentikan.
+Persoalan yang belum tuntas dalam Konferensi Meja Bundar (KMB) dan penyelesaiannya ditunda satu tahun sehingga menjadi sumber sengketa Indonesia-Belanda adalah ...|Status Irian Barat|Pembentukan Uni Indonesia-Belanda|Pengakuan kedaulatan|Pembentukan RIS|Penarikan tentara Belanda|0|Status Irian Barat ditunda setahun dan memicu sengketa berkepanjangan.
+Dalam Komisi Tiga Negara (KTN) bentukan PBB, negara yang dipilih Indonesia sebagai wakilnya adalah ...|Belgia|Amerika Serikat|Australia|India|Inggris|2|Indonesia memilih Australia, Belanda memilih Belgia, dan AS sebagai pihak netral.
+Pertempuran Lima Hari di Semarang (Oktober 1945) dipicu antara lain oleh ...|Perobekan bendera Belanda di Hotel Yamato|Tewasnya Brigjen Mallaby|Ultimatum Sekutu pada 24 Maret 1946|Isu peracunan air minum dan gugurnya dr. Kariadi|Pendaratan pasukan NICA di Tanjung Priok|3|Isu peracunan air minum oleh Jepang dan gugurnya dr. Kariadi menyulut pertempuran.
+Puputan Margarana pada 20 November 1946 di Bali dipimpin oleh ...|Letkol Slamet Riyadi|I Gusti Ngurah Rai|Kolonel Gatot Subroto|Letkol Soeharto|Mayor Daan Mogot|1|Pasukan Ciung Wanara pimpinan I Gusti Ngurah Rai bertempur habis-habisan di Margarana.
+Pemberontakan PKI di Madiun tahun 1948 dipimpin oleh ...|S.M. Kartosuwiryo|Kahar Muzakkar|Daud Beureueh|Westerling|Muso|4|Muso memimpin pemberontakan FDR/PKI di Madiun pada September 1948.
+Konferensi Asia di New Delhi pada Januari 1949 sebagai bentuk dukungan terhadap Indonesia diprakarsai oleh Perdana Menteri India, yaitu ...|Jawaharlal Nehru|Mohammad Ali Jinnah|Gamal Abdel Nasser|Ho Chi Minh|Zhou Enlai|0|Nehru menggelar konferensi untuk mengecam Agresi Militer Belanda II.
+Konsep pertahanan wilayah (Wehrkreise) pada masa perang kemerdekaan dirumuskan oleh ...|Jenderal Soedirman|Letkol Soeharto|A.H. Nasution|Gatot Subroto|Oerip Soemohardjo|2|A.H. Nasution merumuskan sistem Wehrkreise yang mendukung perang gerilya.
+Tokoh yang mengajukan Mosi Integral pada 3 April 1950 sehingga Indonesia kembali ke bentuk negara kesatuan adalah ...|Mohammad Hatta|Mohammad Natsir|Sutan Sjahrir|Burhanuddin Harahap|Wilopo|1|Mosi Integral Natsir mengembalikan Indonesia ke NKRI pada 17 Agustus 1950.
+Salah satu penyebab sering jatuh bangunnya kabinet pada masa Demokrasi Liberal adalah ...|Dominasi militer dalam pemerintahan|Kekuasaan presiden yang terlalu besar|Tidak adanya partai politik|Persaingan antarpartai dan koalisi yang tidak stabil|Campur tangan negara asing|3|Banyak partai dan koalisi rapuh membuat kabinet mudah dijatuhkan lewat mosi tidak percaya.
+Konferensi Asia Afrika (KAA) di Bandung pada April 1955 diselenggarakan pada masa kabinet ...|Natsir|Wilopo|Burhanuddin Harahap|Djuanda|Ali Sastroamidjojo I|4|KAA 1955 berlangsung pada Kabinet Ali Sastroamidjojo I.
+Dokumen penting hasil KAA 1955 yang menjadi landasan perdamaian dan kerja sama bangsa-bangsa Asia-Afrika adalah ...|Dasasila Bandung|Deklarasi Djuanda|Piagam Jakarta|Perjanjian Roem-Roijen|Deklarasi Bangkok|0|Dasasila Bandung memuat sepuluh prinsip perdamaian dan kerja sama.
+Partai yang memperoleh suara terbanyak dalam Pemilu 1955 untuk memilih anggota DPR adalah ...|Masyumi|NU|PNI|PKI|PSI|2|PNI meraih suara terbanyak, disusul Masyumi, NU, dan PKI.
+Pemberontakan DI/TII di Jawa Barat dipimpin oleh ...|Kahar Muzakkar|S.M. Kartosuwiryo|Daud Beureueh|Ibnu Hajar|Amir Fatah|1|Kartosuwiryo memproklamasikan NII pada 1949 di Jawa Barat.
+Salah satu latar belakang munculnya pemberontakan PRRI/Permesta adalah ...|Keinginan mengganti Pancasila dengan ideologi lain|Perebutan wilayah Irian Barat|Campur tangan Belanda dalam politik daerah|Ketidakpuasan daerah terhadap pemerintah pusat dalam pembangunan dan pembagian keuangan|Tuntutan mendirikan negara Islam|3|Ketimpangan pembangunan dan keuangan pusat-daerah memicu PRRI/Permesta.
+Pemberontakan APRA yang terjadi di Bandung pada Januari 1950 dipimpin oleh ...|Raymond Westerling|Dr. Soumokil|Andi Azis|Sultan Hamid II|Muso|0|APRA (Angkatan Perang Ratu Adil) dipimpin Kapten Raymond Westerling.
+Salah satu isi Dekrit Presiden 5 Juli 1959 adalah ...|Pembubaran DPR hasil Pemilu 1955|Pemberlakuan kembali UUDS 1950|Pembentukan Dewan Konstituante|Pengangkatan presiden seumur hidup|Pembentukan MPRS dan DPAS|4|Dekrit: bubarkan Konstituante, kembali ke UUD 1945, bentuk MPRS dan DPAS.
+Kepanjangan USDEK dalam Manifesto Politik (Manipol) pada masa Demokrasi Terpimpin yang benar adalah ...|UUD 1945, Sosialisme Indonesia, Demokrasi Liberal, Ekonomi Terpimpin, Kepribadian Indonesia|UUDS 1950, Sosialisme Indonesia, Demokrasi Terpimpin, Ekonomi Terpimpin, Kepribadian Indonesia|UUD 1945, Sosialisme Indonesia, Demokrasi Terpimpin, Ekonomi Terpimpin, Kepribadian Indonesia|UUD 1945, Sosialisme Indonesia, Demokrasi Terpimpin, Ekonomi Liberal, Kepribadian Indonesia|UUD 1945, Sosialisme Dunia, Demokrasi Terpimpin, Ekonomi Terpimpin, Kepribadian Indonesia|2|USDEK = UUD 1945, Sosialisme Indonesia, Demokrasi Terpimpin, Ekonomi Terpimpin, Kepribadian Indonesia.
+Salah satu penyimpangan terhadap UUD 1945 pada masa Demokrasi Terpimpin adalah ...|Pelaksanaan pemilu secara berkala|Pengangkatan Soekarno sebagai presiden seumur hidup oleh MPRS|Pembatasan masa jabatan presiden|Pemberian kebebasan pers seluas-luasnya|Penerapan sistem kabinet parlementer|1|Ketetapan MPRS 1963 mengangkat presiden seumur hidup, menyimpang dari UUD 1945.
+Dalam rangka perjuangan pembebasan Irian Barat, dibentuk Komando Mandala yang dipimpin oleh ...|A.H. Nasution|Ahmad Yani|Jenderal Soedirman|Mayjen Soeharto|Sarwo Edhie Wibowo|3|Komando Mandala (Trikora, 1962) dipimpin Mayjen Soeharto.
+Penentuan Pendapat Rakyat (Pepera) tahun 1969 di Irian Barat merupakan tindak lanjut dari ...|Perjanjian New York 1962|Perjanjian Roem-Roijen|Konferensi Meja Bundar|Perundingan Linggarjati|Perjanjian Renville|0|Perjanjian New York 1962 mengatur Pepera sebagai penentuan nasib Irian Barat.
+Presiden Soekarno menolak pembentukan Federasi Malaysia pada 1963 karena ...|Malaysia berencana merebut Pulau Kalimantan|Malaysia menolak bergabung dengan Gerakan Non-Blok|Malaysia mengganggu perdagangan di Selat Malaka|Malaysia mendukung pemberontakan PRRI|Dianggap proyek neokolonialisme Inggris yang mengancam kedaulatan Indonesia|4|Soekarno menilai Malaysia boneka Inggris (neokolonialisme), lalu menggelar Dwikora.
+Tujuan kebijakan sanering uang pada Agustus 1959 adalah ...|Meningkatkan nilai ekspor|Menarik investor asing|Mengurangi jumlah uang beredar untuk menekan inflasi|Menambah cadangan emas negara|Menasionalisasi bank-bank asing|2|Sanering memotong nilai uang agar jumlah uang beredar turun dan inflasi mereda.
+Salah satu perwira TNI AD yang menjadi korban Gerakan 30 September 1965 adalah ...|A.H. Nasution|Ahmad Yani|Soeharto|Sarwo Edhie Wibowo|Gatot Subroto|1|Letjen Ahmad Yani gugur; Nasution selamat, putrinya Ade Irma gugur.
+Salah satu isi Tritura (Tiga Tuntutan Rakyat) yang disuarakan KAMI dan KAPPI pada tahun 1966 adalah ...|Pembubaran MPRS|Pengangkatan presiden seumur hidup|Pembentukan Dewan Revolusi|Pembubaran PKI|Penurunan Soekarno dari jabatan presiden|3|Tritura: bubarkan PKI, bersihkan kabinet dari unsur PKI, turunkan harga.
+Surat Perintah 11 Maret 1966 pada intinya memberi wewenang kepada Letjen Soeharto untuk ...|Mengambil tindakan yang perlu demi terjaminnya keamanan, ketertiban, dan stabilitas pemerintahan|Membubarkan MPRS|Menggantikan Soekarno sebagai presiden seumur hidup|Mengumumkan perang terhadap Malaysia|Mengubah isi UUD 1945|0|Supersemar memberi mandat memulihkan keamanan dan ketertiban kepada Soeharto.
+Tiga unsur Trilogi Pembangunan pada masa Orde Baru adalah ...|Industrialisasi, kolektivisasi, dan nasionalisasi|Politik luar negeri bebas aktif, swasembada, dan ekspor|Demokratisasi, desentralisasi, dan modernisasi|Pembangunan desa, kota, dan wilayah perbatasan|Stabilitas nasional yang dinamis, pertumbuhan ekonomi tinggi, dan pemerataan pembangunan beserta hasil-hasilnya|4|Trilogi: stabilitas nasional, pertumbuhan ekonomi, dan pemerataan pembangunan.
+Repelita I mulai dilaksanakan pada tahun ... dengan titik berat pada sektor ...|1966, industri|1969, industri|1969, pertanian|1974, pertanian|1979, perdagangan|2|Repelita I (1969-1974) menitikberatkan sektor pertanian.
+Indonesia berhasil mencapai swasembada beras dan memperoleh penghargaan dari FAO pada tahun ...|1969|1984|1989|1994|1998|1|Swasembada beras tercapai 1984 dan Indonesia menerima penghargaan FAO 1985.
+Dwifungsi ABRI pada masa Orde Baru berarti ABRI memiliki fungsi ...|Pertahanan dan ekonomi|Legislatif dan yudikatif|Pertahanan dan diplomasi|Pertahanan-keamanan serta sosial-politik|Peradilan dan keamanan|3|Dwifungsi: ABRI berperan di bidang hankam sekaligus sosial-politik.
+Sejak Pemilu 1977, peserta pemilu pada masa Orde Baru hanya terdiri atas ...|PPP, Golkar, dan PDI|PNI, PKI, dan Masyumi|PPP, PNI, dan PSI|Golkar, NU, dan PDI|Masyumi, Golkar, dan PDI|0|Fusi partai 1973 menyisakan tiga peserta pemilu: PPP, Golkar, PDI.
+Kebijakan asas tunggal Pancasila yang diberlakukan pada tahun 1985 mewajibkan ...|Seluruh warga negara mengikuti penataran P4 setiap tahun|Pemerintah daerah menghapus peraturan adat|Partai politik menghapus ideologi keagamaan dari program kerja|Pegawai negeri bergabung dengan Golkar|Semua partai politik dan organisasi massa menjadikan Pancasila sebagai satu-satunya asas|4|Asas tunggal mewajibkan semua parpol dan ormas berasaskan Pancasila saja.
+Referendum di Timor Timur pada 30 Agustus 1999 dilaksanakan pada masa pemerintahan ...|Soeharto|Soekarno|B.J. Habibie|Abdurrahman Wahid|Megawati Soekarnoputri|2|Habibie membuka opsi jajak pendapat; Timor Timur memilih merdeka.
+Krisis ekonomi yang melanda Indonesia pada tahun 1997 diawali oleh ...|Jatuhnya harga minyak dunia|Krisis nilai tukar baht Thailand yang menjalar ke melemahnya rupiah|Kenaikan harga bahan bakar minyak secara drastis|Embargo ekonomi negara-negara Barat|Pecahnya Perang Teluk|1|Krisis moneter Asia berawal dari anjloknya baht Thailand pada Juli 1997.
+Jumlah mahasiswa Universitas Trisakti yang gugur dalam Tragedi 12 Mei 1998 adalah ...|Dua orang|Tiga orang|Lima orang|Empat orang|Enam orang|3|Empat mahasiswa Trisakti gugur: Elang Mulia Lesmana, Hery Hertanto, Hafidhin Royan, Hendriawan Sie.
+Setelah Soeharto mengundurkan diri pada 21 Mei 1998, jabatan presiden diserahkan kepada ...|B.J. Habibie|Try Sutrisno|Harmoko|Megawati Soekarnoputri|Wiranto|0|Wakil Presiden B.J. Habibie otomatis menjadi presiden menurut UUD 1945.
+Berikut ini yang bukan merupakan tuntutan reformasi 1998 adalah ...|Amandemen UUD 1945|Penegakan supremasi hukum|Pemberantasan korupsi, kolusi, dan nepotisme|Pemberian otonomi daerah yang luas|Mempertahankan dwifungsi ABRI|4|Reformasi justru menuntut penghapusan dwifungsi ABRI.
+Salah satu kebijakan pemerintahan B.J. Habibie yang menandai awal demokratisasi adalah ...|Penghapusan DPR|Pengangkatan presiden seumur hidup|Pemberian kebebasan pers dan kebebasan membentuk partai politik|Pembubaran Golkar|Pelaksanaan Repelita VII|2|Habibie membuka kebebasan pers dan multipartai sebelum Pemilu 1999.
+Presiden dan Wakil Presiden hasil Sidang Umum MPR Oktober 1999 adalah ...|Megawati Soekarnoputri dan Hamzah Haz|Abdurrahman Wahid dan Megawati Soekarnoputri|B.J. Habibie dan Akbar Tandjung|Amien Rais dan Megawati Soekarnoputri|Abdurrahman Wahid dan Hamzah Haz|1|MPR memilih Gus Dur sebagai presiden dan Megawati sebagai wakil presiden.
+Lembaga yang dibentuk pada masa pemerintahan Megawati Soekarnoputri untuk memberantas korupsi adalah ...|Komnas HAM|Ombudsman Republik Indonesia|Bank Indonesia|Komisi Pemberantasan Korupsi (KPK)|Badan Pemeriksa Keuangan (BPK)|3|KPK dibentuk tahun 2002 (UU No. 30/2002) pada era Megawati.
+Pemilihan presiden dan wakil presiden secara langsung oleh rakyat untuk pertama kalinya, sebagai hasil amandemen UUD 1945, dilaksanakan pada tahun ...|2004|1999|2009|2014|2001|0|Pilpres langsung pertama digelar 2004 dan dimenangi SBY-JK.`;
+const Q=RAW.split("\n").map(l=>{const p=l.split("|");return{q:p[0],o:p.slice(1,6),a:+p[6],e:p[7]}});
+const $=id=>document.getElementById(id),L="abcde";
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const S={order:[],ans:{},dbt:{},i:0,t:DUR,on:false,v:0,info:{}};
+let tick=0,lock=0;
+
+function modal(t,m,btns){
+ $("md").innerHTML=`<div class="modal"><div class="card"><h3>${t}</h3><div>${m}</div><div class="acts">${btns.map((b,i)=>`<button class="btn ${b[1]||""}" data-i="${i}">${b[0]}</button>`).join("")}</div></div></div>`;
+ $("md").querySelectorAll("button").forEach((b,i)=>b.onclick=()=>{$("md").innerHTML="";btns[i][2]&&btns[i][2]()});
+}
+function fs(){try{const r=document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen();r&&r.catch&&r.catch(()=>{})}catch(e){}}
+
+$("go").onclick=()=>{
+ const v=id=>$(id).value.trim(),f={nm:v("nm"),kl:v("kl"),ns:v("ns"),sk:v("sk")};
+ if(!f.nm||!f.kl||!f.ns||!f.sk)return $("er").textContent="Lengkapi semua data peserta.";
+ if(v("tk").toUpperCase()!==TOKEN)return $("er").textContent="Token salah. Tanyakan token kepada pengawas.";
+ S.info=f;S.order=Q.map((_,i)=>i);
+ for(let i=S.order.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[S.order[i],S.order[j]]=[S.order[j],S.order[i]]}
+ $("s1").classList.add("hide");$("s2").classList.remove("hide");
+ $("who").textContent=f.nm+" · "+f.kl;S.on=true;lock=Date.now()+2500;fs();
+ tick=setInterval(()=>{S.t--;clock();if(S.t<=0)finish("Waktu ujian habis.")},1000);clock();render();
+};
+function clock(){const m=Math.floor(S.t/60),s=S.t%60;$("tm").textContent=String(m).padStart(2,"0")+":"+String(s).padStart(2,"0");$("tm").classList.toggle("low",S.t<=300)}
+
+function render(){
+ const k=S.order[S.i],q=Q[k];
+ $("qn").textContent=`Soal ${S.i+1} dari ${Q.length}`;$("qt").textContent=q.q;
+ $("opts").innerHTML=q.o.map((t,j)=>`<button class="op${S.ans[k]===j?" sel":""}" data-j="${j}"><b>${L[j].toUpperCase()}</b><span>${esc(t)}</span></button>`).join("");
+ $("pv").disabled=S.i==0;$("nx").textContent=S.i==Q.length-1?"Selesai ✓":"Selanjutnya →";
+ $("db").classList.toggle("on",!!S.dbt[k]);$("db").textContent=S.dbt[k]?"Batal ragu-ragu":"Ragu-ragu";
+ $("nv").innerHTML=S.order.map((x,i)=>`<button class="nb${S.dbt[x]?" d":S.ans[x]!==undefined?" a":""}${i==S.i?" c":""}" data-i="${i}">${i+1}</button>`).join("");
+}
+$("opts").onclick=e=>{const b=e.target.closest(".op");if(!b)return;S.ans[S.order[S.i]]=+b.dataset.j;render()};
+$("nv").onclick=e=>{const b=e.target.closest(".nb");if(!b)return;S.i=+b.dataset.i;render()};
+$("pv").onclick=()=>{S.i--;render()};
+$("nx").onclick=()=>{S.i<Q.length-1?(S.i++,render()):ask()};
+$("db").onclick=()=>{const k=S.order[S.i];S.dbt[k]=!S.dbt[k];render()};
+$("fin").onclick=ask;
+function ask(){
+ const un=Q.length-Object.keys(S.ans).length,d=Object.values(S.dbt).filter(Boolean).length;
+ modal("Selesaikan ujian?",`Belum dijawab: <b>${un}</b> soal<br>Ragu-ragu: <b>${d}</b> soal<br>Setelah dikumpulkan, jawaban tidak dapat diubah.`,[["Kembali","sec"],["Ya, kumpulkan","",()=>finish()]]);
+}
+
+function viol(why){
+ if(!S.on||Date.now()<lock)return;lock=Date.now()+1500;S.v++;
+ if(S.v==1)modal("⚠️ Peringatan Kecurangan",`Terdeteksi: <b>${why}</b>.<br>Ini satu-satunya peringatan. Jika terulang, ujian akan dikumpulkan otomatis.`,[["Saya mengerti","",()=>{lock=Date.now()+1500;if(!document.fullscreenElement)fs()}]]);
+ else finish("Ujian dihentikan otomatis karena pelanggaran berulang ("+why+").");
+}
+document.addEventListener("visibilitychange",()=>{if(document.hidden)viol("berpindah ke tab/jendela lain")});
+addEventListener("blur",()=>viol("meninggalkan jendela ujian"));
+document.addEventListener("fullscreenchange",()=>{if(!document.fullscreenElement)viol("keluar dari layar penuh")});
+["contextmenu","copy","cut","paste"].forEach(ev=>document.addEventListener(ev,e=>{if(S.on)e.preventDefault()}));
+
+function finish(msg){
+ if(!S.on)return;S.on=false;clearInterval(tick);$("md").innerHTML="";
+ try{document.fullscreenElement&&document.exitFullscreen()}catch(e){}
+ const ok=Q.reduce((n,q,i)=>n+(S.ans[i]===q.a?1:0),0),bl=Q.length-Object.keys(S.ans).length,sc=Math.round(ok*1000/Q.length)/10,f=S.info;
+ $("s2").classList.add("hide");const r=$("s3");r.classList.remove("hide");
+ r.innerHTML=`<div class="hero"><h1>Hasil Ujian</h1><p>UAS Ganjil · Sejarah Indonesia Kelas XII</p></div>
+ <div class="card" style="text-align:center">${msg?`<div class="err">${esc(msg)}</div>`:""}<div class="score">${sc}</div>
+ <div class="stats"><div style="color:var(--ok)">Benar ${ok}</div><div style="color:var(--bad)">Salah ${Q.length-ok-bl}</div><div>Kosong ${bl}</div></div>
+ <div class="info" style="text-align:left"><div><span>Nama</span>${esc(f.nm)}</div><div><span>Kelas</span>${esc(f.kl)}</div><div><span>Nomor Peserta Didik</span>${esc(f.ns)}</div><div><span>Asal Sekolah</span>${esc(f.sk)}</div></div></div>
+ <h2>Jawaban dan Pembahasan</h2>`+S.order.map((k,n)=>{const q=Q[k],u=S.ans[k];
+  return `<div class="card rv"><div class="qn">Soal ${n+1} · ${u===undefined?"Tidak dijawab":u===q.a?"✅ Benar":"❌ Salah"}</div><div class="qt" style="font-size:16px">${esc(q.q)}</div>`+
+  q.o.map((t,j)=>`<div class="o${j===q.a?" k":j===u?" w":""}"><b>${L[j].toUpperCase()}.</b> ${esc(t)}${j===q.a?" ✔":j===u?" (jawabanmu)":""}</div>`).join("")+
+  `<div class="pb"><b>Pembahasan:</b> ${esc(q.e)}</div></div>`}).join("");
+ scrollTo(0,0);
+}
+</script></body></html>
